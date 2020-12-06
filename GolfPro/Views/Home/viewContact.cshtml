@@ -1,0 +1,49 @@
+﻿@model IEnumerable<GolfPro.Models.contact_Setting>
+
+@{
+    ViewBag.Title = "viewContact";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.first_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.last_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th>Delete</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.first_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.last_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            <td>
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<a href="@Url.Action("DashboardSetting","Dashboard")" class="btn btn-warning">Go to Dashboard </a>

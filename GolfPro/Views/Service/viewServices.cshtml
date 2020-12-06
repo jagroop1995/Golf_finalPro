@@ -1,0 +1,23 @@
+﻿@model IEnumerable<GolfPro.Models.service_Setting>
+
+@{
+    ViewBag.Title = "viewServices";
+}
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <Div class="col-md-12" style="border:1px solid green;">
+                <h1>  @Html.DisplayFor(modelItem => item.Name)</h1>
+                <hr/>
+                <p>   @Html.DisplayFor(modelItem => item.Specification) </p>
+
+            </Div>
+
+        }
+
+        </div>
+
+</div>
+
